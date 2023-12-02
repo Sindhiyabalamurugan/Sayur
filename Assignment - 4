@@ -1,0 +1,14 @@
+def shift_letters(word, key):
+    return ''.join([chr((ord(char) - ord('a') + key) % 26 + ord('a')) if char.islower() else char for char in word])
+
+def encode(sentence, key):
+    words = sentence.split()
+    encoded_words = [shift_letters(word[::-1], key) if i % 2 == 0 else shift_letters(word, key) for i, word in enumerate(words)]
+    encoded_sentence = ' '.join(encoded_words)
+    return encoded_sentence
+
+# Example usage:
+input_sentence = "I am the King"
+key = 2
+output_sentence = encode(input_sentence, key)
+print(output_sentence)
