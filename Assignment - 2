@@ -1,0 +1,21 @@
+import string
+from collections import Counter
+
+def count_word_frequency(file_path):
+    word_count = Counter()
+    
+    with open(file_path, 'r') as file:
+        for line in file:
+            # Remove punctuation and convert to lowercase
+            line = line.translate(str.maketrans("", "", string.punctuation)).lower()
+            
+            # Update the word count using Counter
+            word_count.update(line.split())
+    
+    # Print the word frequencies
+    for word, count in word_count.items():
+        print(f"{word}: {count}")
+
+# Example usage:
+file_path = "your_essay.txt"  # Replace with the path to your essay file
+count_word_frequency(file_path)
