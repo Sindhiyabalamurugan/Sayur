@@ -1,0 +1,27 @@
+Class InstagramPost:
+    // Properties (Private)
+    - username: string
+    - image_url: string
+    - caption: string
+    - likes: int
+    - comments: list of strings
+
+    // Constructor
+    + InstagramPost(username: string, image_url: string, caption: string):
+        - Set username, image_url, caption, likes = 0
+        - Initialize comments as an empty list
+
+    // Public Methods
+    + like(): Increment likes by 1
+
+    + add_comment(comment: string): Append comment to comments list
+
+    + get_info():
+        - Return a dictionary with username, image_url, caption, likes, and comments
+
+    // Getter Methods
+    + get_username(): Return username
+    + get_image_url(): Return image_url
+    + get_caption(): Return caption
+    + get_likes(): Return likes
+    + get_comments(): Return comments
